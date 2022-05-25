@@ -1,0 +1,24 @@
+{
+  "name": "rndatecs-printer",
+  "version": "1.0.0",
+  "description": "Biblioteca para conectar as impressoras termicas datecs atraves do react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/thyagobs.al/rndatecs-printer.git"
+  },
+  "keywords": [
+    "datecs",
+    "printer",
+    "datecs-printer"
+  ],
+  "author": "Thyago Henrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/thyagobs.al/rndatecs-printer/issues"
+  },
+  "homepage": "https://gitlab.com/thyagobs.al/rndatecs-printer#readme"
+}
