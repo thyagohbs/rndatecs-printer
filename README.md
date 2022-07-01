@@ -16,7 +16,7 @@ DPP 250
 
 ### Mostly automatic installation
 
-`$ react-native link rndatecs-printer`
+`$ npx react-native link rndatecs-printer`
 
 ### Add permissions in your AndroidManifest.xml
 ```
@@ -28,7 +28,6 @@ DPP 250
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.rn.datecsprinter.RNDatecsPrinterPackage;` to the imports at the top of the file
-  - Add `new RNDatecsPrinterPackage()` to the list returned by the `getPackages()` method
 
 2. Append the following lines to `android/settings.gradle`:
   	```
