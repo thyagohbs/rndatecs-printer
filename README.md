@@ -37,7 +37,10 @@ DPP 250
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':rndatecs-printer')
+	  dependencies {
+		compile project(':rndatecs-printer')  
+	  }
+      
   	```
 
 ### Tags definition
