@@ -32,7 +32,8 @@ DPP 250
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':rndatecs-printer'
-  	project(':rndatecs-printer').projectDir = new File(rootProject.projectDir, 	'../node_modules/rndatecs-printer/android')
+  	project(':rndatecs-printer').projectDir = new File(rootProject.projectDir, '../node_modules/rndatecs-printer/android')
+
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
