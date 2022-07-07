@@ -164,7 +164,9 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 			Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 			ArrayList list = new ArrayList();
 			for(BluetoothDevice device : pairedDevices){
-				list.add(device);
+				if(device.getName().equals("DPP-350")){
+									list.add(device);
+				}
 			}
 
 			//need to return list of paired devices
