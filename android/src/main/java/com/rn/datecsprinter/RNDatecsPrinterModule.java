@@ -130,13 +130,14 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 	public void getPairedDevices(Promise promise){
 		Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 		// it might need to be an react.bridge.WritableArray
-		ArrayList list = new ArrayList();
+		ArrayList<String> list = new ArrayList();
+
 		for(BluetoothDevice device : pairedDevices){
-			list.add(device);
+			list.add(device.getName());
 		}
 
 		if(list.size() > 0){
-			promise.resolve(list);
+			promise.resolve(list.toString());
 		}else{
 			promise.reject("Nenhum dispositivo pareado.");
 		}
@@ -159,15 +160,19 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
      * @param promise
      */
 	@ReactMethod
-	public void connect(Promise promise) throws IOException {
+	public void connect(String modelo,Promise promise) throws IOException {
+		
 		try {
 			Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 			ArrayList list = new ArrayList();
 			for(BluetoothDevice device : pairedDevices){
-				if(device.getName().equals("DPP-350")){
-									list.add(device);
+				if(device.getName().equals(modelo)){
+					list.add(device);	
 				}
+
 			}
+
+			//promise.resolve(modelo);
 
 			//need to return list of paired devices
 			if(list.size() > 0){
@@ -192,7 +197,6 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 				return;
 			}
 
-			// promise.resolve("BLUETOOTH CONNECTED");
 		}catch(Exception e){
 			showToast("Verifique se a Impressora está ligada!");
 
@@ -316,7 +320,7 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 					}	
 				}
 				
-				//promise.resolve("TEXTO 1 GetDaBol:"+templateTexto);
+		
 				
 				i++;
 			}
