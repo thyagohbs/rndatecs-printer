@@ -169,7 +169,6 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 				if(device.getName().equals(modelo)){
 					list.add(device);	
 				}
-
 			}
 
 			//promise.resolve(modelo);
@@ -320,7 +319,6 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 					}	
 				}
 				
-		
 				
 				i++;
 			}
@@ -381,11 +379,14 @@ public class RNDatecsPrinterModule extends ReactContextBaseJavaModule implements
 
 
 		}catch(Exception e){
-			promise.reject("Error ao Imprimir: " + e.getMessage());
+			/*  Possiveis erros:
+					1) A conexão é finalizada caso o modelo da impressora não esteja cadastrado na database.  */
 
+				promise.reject("Error ao Imprimir: " + e.getMessage());
+
+				showToast("Não foi possível imprimir,contacte o suporte!");
 		}
-
-    }
+  }
 
 
 	/**
