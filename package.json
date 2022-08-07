@@ -1,6 +1,6 @@
 {
   "name": "rndatecs-printer",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "Biblioteca para conectar as impressoras termicas datecs atraves do react native",
   "main": "index.js",
   "scripts": {
